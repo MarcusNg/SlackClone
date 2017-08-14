@@ -82,15 +82,52 @@ class AuthService {
 //                }
                 
                 // With SwiftyJSON
-                guard let data = response.data else {
-                    return
-                }
+                guard let data = response.data else { return }
+                
                 let json = JSON(data: data)
                 self.userEmail = json["userEmail"].stringValue
                 self.authToken = json["token"].stringValue
                 
                 self.isLoggedIn = true
                 completion(true) // Success
+            } else {
+                completion(false) // Failure
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "name": name,
+            "email": lowerCaseEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ]
+        
+        let header = [
+            "Authorization":"Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error == nil {
+                
+                guard let data = response.data else { return }
+                
+                let json = JSON(data: data)
+                let id = json["_id"].stringValue
+                let avatarColor = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email = json["email"].stringValue
+                let name = json["name"].stringValue
+                
+                UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
+
+                completion(true) // Success
+                
             } else {
                 completion(false) // Failure
                 debugPrint(response.result.error as Any)
