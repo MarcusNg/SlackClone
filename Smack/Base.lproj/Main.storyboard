@@ -116,7 +116,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-1B-0Rh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-1B-0Rh" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="548" width="99" height="99"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-Om-iS1">
@@ -418,7 +418,7 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="I64-VV-v5e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="I64-VV-v5e" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="138" y="299" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="mTf-x1-Blz"/>
@@ -454,6 +454,10 @@
                                     <action selector="pickBGColorPressed:" destination="HbN-AP-feQ" eventType="touchUpInside" id="wxO-mG-FIo"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-kK-W6e">
+                                <rect key="frame" x="169.5" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -464,12 +468,14 @@
                             <constraint firstItem="I64-VV-v5e" firstAttribute="top" secondItem="sZ1-Nm-XEb" secondAttribute="top" id="AEu-mN-VTm"/>
                             <constraint firstItem="I64-VV-v5e" firstAttribute="top" secondItem="4mu-kx-diG" secondAttribute="bottom" constant="40" id="BaM-pH-gjQ"/>
                             <constraint firstItem="4mu-kx-diG" firstAttribute="centerX" secondItem="hcP-4r-D59" secondAttribute="centerX" id="LsT-2j-xaT"/>
+                            <constraint firstItem="NEA-kK-W6e" firstAttribute="centerY" secondItem="e6C-ch-XGR" secondAttribute="centerY" constant="-100" id="R6r-0z-KxS"/>
                             <constraint firstItem="sZ1-Nm-XEb" firstAttribute="width" secondItem="I64-VV-v5e" secondAttribute="width" id="TjQ-9B-GUt"/>
                             <constraint firstItem="4mu-kx-diG" firstAttribute="centerX" secondItem="e6C-ch-XGR" secondAttribute="centerX" id="WCs-cW-XQA"/>
                             <constraint firstItem="4fW-mb-vDI" firstAttribute="centerX" secondItem="e6C-ch-XGR" secondAttribute="centerX" id="aV3-J4-oTd"/>
                             <constraint firstItem="hcP-4r-D59" firstAttribute="top" secondItem="Ign-Tj-96E" secondAttribute="top" constant="40" id="fyW-fT-5a4"/>
                             <constraint firstItem="I64-VV-v5e" firstAttribute="centerX" secondItem="e6C-ch-XGR" secondAttribute="centerX" id="hvb-FA-WQs"/>
                             <constraint firstItem="4mu-kx-diG" firstAttribute="top" secondItem="hcP-4r-D59" secondAttribute="bottom" constant="40" id="lw2-4C-R8F"/>
+                            <constraint firstItem="NEA-kK-W6e" firstAttribute="centerX" secondItem="e6C-ch-XGR" secondAttribute="centerX" id="pJd-13-KDd"/>
                             <constraint firstItem="k08-mK-Ep2" firstAttribute="centerX" secondItem="e6C-ch-XGR" secondAttribute="centerX" id="qM6-LV-soJ"/>
                             <constraint firstItem="Ign-Tj-96E" firstAttribute="trailing" secondItem="oaX-cO-54R" secondAttribute="trailing" constant="16" id="zX8-pn-OQq"/>
                         </constraints>
@@ -478,6 +484,7 @@
                     <connections>
                         <outlet property="emailTF" destination="rhu-cH-1ya" id="sgu-s3-vbx"/>
                         <outlet property="passTF" destination="v8v-GZ-bhJ" id="f72-UQ-dx5"/>
+                        <outlet property="spinner" destination="NEA-kK-W6e" id="PEn-XO-GXD"/>
                         <outlet property="userImg" destination="I64-VV-v5e" id="5gQ-wY-Lox"/>
                         <outlet property="usernameTF" destination="Q2e-i4-VJv" id="KxF-T1-L0d"/>
                         <segue destination="2c1-YI-qgp" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="6eh-Qe-uDH"/>
