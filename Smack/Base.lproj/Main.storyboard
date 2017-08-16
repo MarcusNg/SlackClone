@@ -115,6 +115,9 @@
                                 <rect key="frame" x="281" y="83" width="22" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelBtnPressed:" destination="QWZ-fe-fg5" eventType="touchUpInside" id="CF2-s4-UP3"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-Om-iS1">
                                 <rect key="frame" x="0.0" y="121" width="375" height="432"/>
