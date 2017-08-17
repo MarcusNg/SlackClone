@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F157BFD1F45C9560007F7B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F157BFC1F45C9560007F7B3 /* Message.swift */; };
 		5F2420EB1F4169FD0031F340 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2420EA1F4169FD0031F340 /* AvatarPickerVC.swift */; };
 		5F2420ED1F416B5F0031F340 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2420EC1F416B5F0031F340 /* AvatarCell.swift */; };
 		5F2F4DDC1F3F82EF00EE1910 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4DDB1F3F82EF00EE1910 /* GradientView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F157BFC1F45C9560007F7B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5F2420EA1F4169FD0031F340 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5F2420EC1F416B5F0031F340 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		5F2F4DDB1F3F82EF00EE1910 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5F7902EE1F44C9C0001D91C1 /* Channel.swift */,
+				5F157BFC1F45C9560007F7B3 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				5F8FB23E1F3F49B400DA461D /* SWRevealViewController.m in Sources */,
 				5F2420EB1F4169FD0031F340 /* AvatarPickerVC.swift in Sources */,
 				5FA216D81F3FED940062FF19 /* RoundedButton.swift in Sources */,
+				5F157BFD1F45C9560007F7B3 /* Message.swift in Sources */,
 				5F7902EF1F44C9C0001D91C1 /* Channel.swift in Sources */,
 				5F9EA0071F41F0CA005851D8 /* CircleImage.swift in Sources */,
 				5F7902ED1F44C975001D91C1 /* MessageService.swift in Sources */,
