@@ -12,6 +12,7 @@ class ChatVC: UIViewController {
 
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var channelNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,8 @@ class ChatVC: UIViewController {
             })
         }
         
-        MessageService.instance.findAllChannel { (success) in
-            
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,15 +37,29 @@ class ChatVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func userDataDidChange(_ notif: NSNotification) {
+        if AuthService.instance.isLoggedIn {
+            // Retrieve Channels
+            onLoginGetMessages()
+        } else {
+            channelNameLabel.text = "Please Log In"
+        }
     }
-    */
-
+    
+    @objc func channelSelected(_ notif: NSNotification) {
+        updateWithChannel()
+    }
+    
+    func updateWithChannel() {
+        let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
+        channelNameLabel.text = "#\(channelName)"
+    }
+    
+    func onLoginGetMessages() {
+        MessageService.instance.findAllChannel { (success) in
+            if success {
+//                do stuff here
+            }
+        }
+    }
 }
