@@ -26,7 +26,7 @@ class MessageService {
                     for item in json {
                         let name = item["name"].stringValue
                         let channelDescription = item["description"].stringValue
-                        let id = item["id"].stringValue
+                        let id = item["_id"].stringValue
                         let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
                         self.channels.append(channel)
                     }
@@ -35,6 +35,7 @@ class MessageService {
                 }
             } else {
                 completion(false)
+                print("Find all channel failed")
                 debugPrint(response.result.error as Any)
             }
         }
@@ -57,9 +58,9 @@ class MessageService {
                 if let json = JSON(data: data).array {
                     for item in json {
                         let messageBody = item["messageBody"].stringValue
-                        let channelID = item["channelID"].stringValue
-                        let id = item["id"].stringValue
-                        let username = item["username"].stringValue
+                        let channelID = item["channelId"].stringValue
+                        let id = item["_id"].stringValue
+                        let username = item["userName"].stringValue
                         let userAvatar = item["userAvatar"].stringValue
                         let userAvatarColor = item["userAvatarColor"].stringValue
                         let timeStamp = item["timeStamp"].stringValue
@@ -67,10 +68,12 @@ class MessageService {
                         let message = Message(message: messageBody, username: username, channelID: channelID, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
                         self.messages.append(message)
                     }
+                    print(self.messages)
                     completion(true)
                 }
             } else {
                 debugPrint(response.result.error as Any)
+                print("Find all messages failed")
                 completion(false)
             }
         }

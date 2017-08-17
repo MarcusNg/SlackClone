@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F157BFD1F45C9560007F7B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F157BFC1F45C9560007F7B3 /* Message.swift */; };
+		5F157BFF1F45D8110007F7B3 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F157BFE1F45D8110007F7B3 /* KeyboardBoundView.swift */; };
 		5F2420EB1F4169FD0031F340 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2420EA1F4169FD0031F340 /* AvatarPickerVC.swift */; };
 		5F2420ED1F416B5F0031F340 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2420EC1F416B5F0031F340 /* AvatarCell.swift */; };
 		5F2F4DDC1F3F82EF00EE1910 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4DDB1F3F82EF00EE1910 /* GradientView.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		5F157BFC1F45C9560007F7B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5F157BFE1F45D8110007F7B3 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		5F2420EA1F4169FD0031F340 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5F2420EC1F416B5F0031F340 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		5F2F4DDB1F3F82EF00EE1910 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				5F2420EC1F416B5F0031F340 /* AvatarCell.swift */,
 				5F9EA0061F41F0CA005851D8 /* CircleImage.swift */,
 				5F7902F01F44D35A001D91C1 /* ChannelCell.swift */,
+				5F157BFE1F45D8110007F7B3 /* KeyboardBoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F157BFF1F45D8110007F7B3 /* KeyboardBoundView.swift in Sources */,
 				5F7902FA1F45348A001D91C1 /* SocketService.swift in Sources */,
 				5FEBD2BA1F427E4A004EFB8A /* ProfileVC.swift in Sources */,
 				5F7902F11F44D35A001D91C1 /* ChannelCell.swift in Sources */,

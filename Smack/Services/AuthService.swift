@@ -79,6 +79,7 @@ class AuthService {
                 completion(true) // Success
             } else {
                 completion(false) // Failure
+                print("Login User failed")
                 debugPrint(response.result.error as Any)
             }
         }
@@ -105,6 +106,7 @@ class AuthService {
                 
             } else {
                 completion(false) // Failure
+                print("Create user failed")
                 debugPrint(response.result.error as Any)
             }
         }
@@ -121,6 +123,7 @@ class AuthService {
                 
             } else {
                 completion(false) // Failure
+                print("Find user by email failed")
                 debugPrint(response.result.error as Any)
             }
         }
@@ -135,6 +138,5 @@ class AuthService {
         let name = json["name"].stringValue
         
         UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
-
     }
 }
