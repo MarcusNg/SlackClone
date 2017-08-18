@@ -70,17 +70,24 @@
                                     <constraint firstItem="RDe-rp-fCe" firstAttribute="centerX" secondItem="TPo-1S-n5a" secondAttribute="centerX" id="tiE-Mp-gb0"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M51-jl-feQ">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type your message here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M51-jl-feQ">
+                                <rect key="frame" x="8" y="627" width="325" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eqY-G7-W1Z"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageTFEdited:" destination="XXM-kX-zvs" eventType="editingChanged" id="8Ay-sz-8D5"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-AJ-6Mb">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vdy-K4-Mqi"/>
+                                    <constraint firstAttribute="width" constant="30" id="Zgj-7w-tuT"/>
+                                </constraints>
                                 <state key="normal" image="send"/>
                                 <connections>
                                     <action selector="sendMessageBtnPressed:" destination="XXM-kX-zvs" eventType="touchUpInside" id="IgX-F5-ehS"/>
@@ -111,7 +118,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUV-f7-cfI">
-                                                    <rect key="frame" x="70" y="35.5" width="285" height="21.5"/>
+                                                    <rect key="frame" x="70" y="33.5" width="285" height="26.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -128,9 +135,9 @@
                                                 <constraint firstItem="DpL-ps-EN1" firstAttribute="leading" secondItem="cOk-Kf-wY7" secondAttribute="trailing" constant="12" id="13T-Q5-F8U"/>
                                                 <constraint firstItem="hs1-mu-CHN" firstAttribute="leading" secondItem="DpL-ps-EN1" secondAttribute="trailing" constant="6" id="Eal-Gw-HB7"/>
                                                 <constraint firstItem="cOk-Kf-wY7" firstAttribute="top" secondItem="UAv-no-fZc" secondAttribute="topMargin" id="IPE-Zt-bLg"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vUV-f7-cfI" secondAttribute="bottom" constant="15" id="YN6-6n-jPB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vUV-f7-cfI" secondAttribute="bottom" constant="12" id="YN6-6n-jPB"/>
                                                 <constraint firstItem="DpL-ps-EN1" firstAttribute="top" secondItem="cOk-Kf-wY7" secondAttribute="top" id="cSV-43-BmY"/>
-                                                <constraint firstItem="vUV-f7-cfI" firstAttribute="top" secondItem="DpL-ps-EN1" secondAttribute="bottom" constant="8" id="deG-gE-5nG"/>
+                                                <constraint firstItem="vUV-f7-cfI" firstAttribute="top" secondItem="DpL-ps-EN1" secondAttribute="bottom" constant="6" id="deG-gE-5nG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vUV-f7-cfI" secondAttribute="trailing" constant="12" id="gZM-K9-clX"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hs1-mu-CHN" secondAttribute="trailing" constant="20" symbolic="YES" id="mt0-nX-qQs"/>
                                                 <constraint firstItem="vUV-f7-cfI" firstAttribute="leading" secondItem="cOk-Kf-wY7" secondAttribute="trailing" constant="12" id="qqV-BB-WgV"/>
@@ -146,6 +153,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGW-E3-9oG">
+                                <rect key="frame" x="8" y="621" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,12 +168,15 @@
                             <constraint firstItem="TPo-1S-n5a" firstAttribute="leading" secondItem="jts-q6-F59" secondAttribute="leading" id="4mo-Xj-70g"/>
                             <constraint firstItem="jts-q6-F59" firstAttribute="trailing" secondItem="2f5-AJ-6Mb" secondAttribute="trailing" constant="8" id="CtX-ui-axT"/>
                             <constraint firstItem="2f5-AJ-6Mb" firstAttribute="centerY" secondItem="M51-jl-feQ" secondAttribute="centerY" id="JYU-TH-0Cx"/>
+                            <constraint firstItem="mGW-E3-9oG" firstAttribute="leading" secondItem="jts-q6-F59" secondAttribute="leading" constant="8" id="UEc-n0-wbl"/>
+                            <constraint firstItem="2f5-AJ-6Mb" firstAttribute="leading" secondItem="M51-jl-feQ" secondAttribute="trailing" constant="4" id="Wye-WI-Bwr"/>
+                            <constraint firstItem="M51-jl-feQ" firstAttribute="top" secondItem="mGW-E3-9oG" secondAttribute="bottom" constant="6" id="bb6-S3-V9o"/>
                             <constraint firstItem="M51-jl-feQ" firstAttribute="top" secondItem="wdt-9h-m2x" secondAttribute="bottom" constant="30" id="bsS-Qn-063"/>
                             <constraint firstItem="M51-jl-feQ" firstAttribute="bottom" secondItem="jts-q6-F59" secondAttribute="bottom" id="cBH-xr-vVV"/>
                             <constraint firstItem="jts-q6-F59" firstAttribute="trailing" secondItem="wdt-9h-m2x" secondAttribute="trailing" id="nIX-Mg-uOx"/>
-                            <constraint firstItem="jts-q6-F59" firstAttribute="trailing" secondItem="M51-jl-feQ" secondAttribute="trailing" id="sOY-ne-4Gc"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mGW-E3-9oG" secondAttribute="trailing" constant="20" symbolic="YES" id="uts-P9-ceS"/>
                             <constraint firstItem="wdt-9h-m2x" firstAttribute="top" secondItem="TPo-1S-n5a" secondAttribute="bottom" id="yVA-9h-d3A"/>
-                            <constraint firstItem="M51-jl-feQ" firstAttribute="leading" secondItem="jts-q6-F59" secondAttribute="leading" id="zd1-c5-wgW"/>
+                            <constraint firstItem="M51-jl-feQ" firstAttribute="leading" secondItem="jts-q6-F59" secondAttribute="leading" constant="8" id="zd1-c5-wgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jts-q6-F59"/>
                     </view>
@@ -168,7 +184,9 @@
                         <outlet property="channelNameLabel" destination="RDe-rp-fCe" id="GXM-qj-uVs"/>
                         <outlet property="menuBtn" destination="qLO-r2-VAQ" id="HzX-mX-TVH"/>
                         <outlet property="messageTF" destination="M51-jl-feQ" id="6eM-Gn-h36"/>
+                        <outlet property="sendBtn" destination="2f5-AJ-6Mb" id="pq7-UB-IhJ"/>
                         <outlet property="tableView" destination="wdt-9h-m2x" id="ZtB-9h-0Ys"/>
+                        <outlet property="typingUsersLbl" destination="mGW-E3-9oG" id="sAs-y4-YaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ss-MI-Uz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
